@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25D44645-79C8-4FA9-89B4-A70A8A95AC37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FamousQuoteQuizGame.Data</RootNamespace>
+    <AssemblyName>FamousQuoteQuizGame.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FamousQuoteDbContext.cs" />
+    <Compile Include="Migrations\201701131107000_Init.cs" />
+    <Compile Include="Migrations\201701131107000_Init.Designer.cs">
+      <DependentUpon>201701131107000_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701150823435_UserStatisticsAndUserImplementIDeletable.cs" />
+    <Compile Include="Migrations\201701150823435_UserStatisticsAndUserImplementIDeletable.Designer.cs">
+      <DependentUpon>201701150823435_UserStatisticsAndUserImplementIDeletable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701150859081_UserGameInfo.cs" />
+    <Compile Include="Migrations\201701150859081_UserGameInfo.Designer.cs">
+      <DependentUpon>201701150859081_UserGameInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701150904199_UserGameInfo-SecondTry.cs" />
+    <Compile Include="Migrations\201701150904199_UserGameInfo-SecondTry.Designer.cs">
+      <DependentUpon>201701150904199_UserGameInfo-SecondTry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701150918431_RemoveCreatorPropFromQuote.cs" />
+    <Compile Include="Migrations\201701150918431_RemoveCreatorPropFromQuote.Designer.cs">
+      <DependentUpon>201701150918431_RemoveCreatorPropFromQuote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701151917522_SomeChangesInTheDbStructure.cs" />
+    <Compile Include="Migrations\201701151917522_SomeChangesInTheDbStructure.Designer.cs">
+      <DependentUpon>201701151917522_SomeChangesInTheDbStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701151936511_SomeMigration.cs" />
+    <Compile Include="Migrations\201701151936511_SomeMigration.Designer.cs">
+      <DependentUpon>201701151936511_SomeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701151938171_SomeMigration1.cs" />
+    <Compile Include="Migrations\201701151938171_SomeMigration1.Designer.cs">
+      <DependentUpon>201701151938171_SomeMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701152301100_addInterfaceToUserInfoAndUserStatistic.cs" />
+    <Compile Include="Migrations\201701152301100_addInterfaceToUserInfoAndUserStatistic.Designer.cs">
+      <DependentUpon>201701152301100_addInterfaceToUserInfoAndUserStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161218499_Refactoring.cs" />
+    <Compile Include="Migrations\201701161218499_Refactoring.Designer.cs">
+      <DependentUpon>201701161218499_Refactoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161754362_RenameSomeProps.cs" />
+    <Compile Include="Migrations\201701161754362_RenameSomeProps.Designer.cs">
+      <DependentUpon>201701161754362_RenameSomeProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161803073_SetNumericPropToDefaultZero.cs" />
+    <Compile Include="Migrations\201701161803073_SetNumericPropToDefaultZero.Designer.cs">
+      <DependentUpon>201701161803073_SetNumericPropToDefaultZero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161809017_ChagePropToNull.cs" />
+    <Compile Include="Migrations\201701161809017_ChagePropToNull.Designer.cs">
+      <DependentUpon>201701161809017_ChagePropToNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FamousQuoteQuizGame.Data.Models\FamousQuoteQuizGame.Data.Models.csproj">
+      <Project>{bef4f06e-2d97-46b8-befb-e5a2b90a07a3}</Project>
+      <Name>FamousQuoteQuizGame.Data.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701131107000_Init.resx">
+      <DependentUpon>201701131107000_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701150823435_UserStatisticsAndUserImplementIDeletable.resx">
+      <DependentUpon>201701150823435_UserStatisticsAndUserImplementIDeletable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701150859081_UserGameInfo.resx">
+      <DependentUpon>201701150859081_UserGameInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701150904199_UserGameInfo-SecondTry.resx">
+      <DependentUpon>201701150904199_UserGameInfo-SecondTry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701150918431_RemoveCreatorPropFromQuote.resx">
+      <DependentUpon>201701150918431_RemoveCreatorPropFromQuote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701151917522_SomeChangesInTheDbStructure.resx">
+      <DependentUpon>201701151917522_SomeChangesInTheDbStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701151936511_SomeMigration.resx">
+      <DependentUpon>201701151936511_SomeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701151938171_SomeMigration1.resx">
+      <DependentUpon>201701151938171_SomeMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701152301100_addInterfaceToUserInfoAndUserStatistic.resx">
+      <DependentUpon>201701152301100_addInterfaceToUserInfoAndUserStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161218499_Refactoring.resx">
+      <DependentUpon>201701161218499_Refactoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161754362_RenameSomeProps.resx">
+      <DependentUpon>201701161754362_RenameSomeProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161803073_SetNumericPropToDefaultZero.resx">
+      <DependentUpon>201701161803073_SetNumericPropToDefaultZero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161809017_ChagePropToNull.resx">
+      <DependentUpon>201701161809017_ChagePropToNull.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

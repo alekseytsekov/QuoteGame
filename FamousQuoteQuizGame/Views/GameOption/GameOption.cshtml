@@ -1,0 +1,28 @@
+﻿@using FamousQuoteQuizGame.CustomHelpers
+@using FamousQuoteQuizGame.Enums
+@model FamousQuoteQuizGame.Models.ClientViewModel
+
+@{
+    ViewBag.Title = "GameOption";
+}
+<div class="set-mode">
+    <h3>Please select game mode</h3>
+    @using (@Html.BeginForm("SetOptions", "GameOption", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        ;
+        <div class="set-mode">
+            <label>
+                @Html.RadioButtonFor(x => x.GameMode, GameMode.Binary, new { @class = "set-mode", @checked= "checked"})<span class="set-mode">Answer with Yes or No</span></label><br />
+            <label>
+                @Html.RadioButtonFor(x => x.GameMode, GameMode.Multiple)<span class="set-mode">Chose from few answers</span></label><br />
+            
+            
+            <div class="set-mode">
+                @Html.SubmitButton("Save changes", new { @class = "gray-effect set-mode", name = "submit" })
+                @Html.SubmitButton("Cancel", new { @class = "gray-effect set-mode", name = "submit" })
+            </div>
+        </div>
+    }
+</div>
+

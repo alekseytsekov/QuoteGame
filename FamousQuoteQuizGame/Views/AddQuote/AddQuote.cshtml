@@ -1,0 +1,41 @@
+﻿@using FamousQuoteQuizGame.CustomHelpers
+@model FamousQuoteQuizGame.Models.QuoteViewModel
+
+@{
+    ViewBag.Title = "AddQuote";
+}
+
+<div class="add-quote">
+    @using (Html.BeginForm("Respond", "AddQuote", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <fieldset>
+            <legend>Add new quote and it's author.</legend>
+            <div class="new-label">
+                @Html.DisplayName("Enter a quote author:")
+            </div>
+            <div class="new-context">
+                @Html.TextBoxFor(x=> x.TextBox, new { @class = "input-quote-author", required = "required" })
+            </div>
+            <div class="new-quote">
+                <div class="new-label">
+                    @Html.DisplayName("Enter a quote:")
+                </div>
+                <div class="new-context">
+                    @Html.TextAreaFor(x=> x.TextArea, new { @class = "input-new-quote", required = "required" })
+                </div>
+            </div>
+            <div class="add-quote-submit">
+                <div class="left-button custom-button">
+                    @Html.SubmitButton("Add", new { @class = "submit-new-quote", name = "submit" })
+                </div>
+                <div class="right-button custom-button">
+                    @Html.ActionLink("Cancel", "Game", "Game", null, new { @class = "cancel-button" })
+                </div>
+            </div>
+
+        </fieldset>
+    }
+</div>
+
+                

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FamousQuoteQuizGame.Models.HighScoreViewModel>
+
+@{
+    ViewBag.Title = "Standing";
+}
+
+<div class="container table-responsive">
+    <h2>Standing</h2>
+
+    <table class="table">
+        <tr class="danger">
+            <th>&#x2116;</th>
+            <th>@Model.FirstOrDefault().NickName</th>
+            <th>@Model.FirstOrDefault().Attempts</th>
+            <th>@Model.FirstOrDefault().Result</th>
+        </tr>
+        @{ int index = 1;}
+        @foreach (var highScoreModel in Model)
+        {
+            
+                if (index%2 != 0)
+                {
+                    <tr class="success">
+                        <td>@index</td>
+                        <td>@highScoreModel.User</td>
+                        <td>@highScoreModel.GetMixAttempts()</td>
+                        <td>@string.Format("{0:F2}", highScoreModel.GetSuccessRating())<span>@Model.FirstOrDefault().PercentSign</span></td>
+                    </tr>
+                }
+                else
+                {
+                    <tr class="warning">
+                        <td>@index</td>
+                        <td>@highScoreModel.User</td>
+                        <td>@highScoreModel.GetMixAttempts()</td>
+                        <td>@string.Format("{0:F2}", highScoreModel.GetSuccessRating())<span>@Model.FirstOrDefault().PercentSign</span></td>
+                    </tr>
+                }
+            
+                
+            {
+                index++;
+            }
+        }
+    </table>    
+</div>
+

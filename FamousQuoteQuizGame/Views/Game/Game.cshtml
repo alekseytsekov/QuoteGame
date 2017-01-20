@@ -1,0 +1,129 @@
+﻿@using FamousQuoteQuizGame.CustomHelpers
+@using FamousQuoteQuizGame.Enums
+@model FamousQuoteQuizGame.Models.ClientViewModel
+
+@{
+    ViewBag.Title = "Game";
+}
+<div class="game-container">
+    <div id="game-option">
+        
+        <div id="play-icon" class="icon-container" onclick="callBinary(this)"><span class="glyphicon glyphicon-list"></span></div>
+        <div id="option-icon" class="icon-container" onclick="callBinary(this)"><span class="glyphicon glyphicon-cog"></span></div>
+        
+    </div>
+    
+    <div id="set-mode"></div>
+    
+    <div class="play-mode">
+        @if (!@Model.IsChecked)
+        {
+            <div class="play-mode-question">@Model.Quote</div>
+        }
+        <div id="game-answer">
+            
+            @if (Model.GameMode == GameMode.Binary && !Model.IsChecked)
+            {
+                using (@Html.BeginForm("BinaryAnswer", "Game", FormMethod.Post, new { id = "dontwork" }))
+                {
+                    @Html.AntiForgeryToken()
+                    if (Model.GameMode == GameMode.Binary)
+                    {
+                        <div class="possible-author">
+                            <div class="right-answer-binary-support">This quote belongs to:</div>
+                            <div class="right-answer-binary">@Model.RightAnswer</div>
+                            @Html.HiddenFor(m=>m.RightAnswer)
+                            @Html.HiddenFor(m=>m.QuoteId)
+                        </div>
+                    }
+                    <div class="binary-submit">
+                      
+                        @Html.SubmitButton("Yes", new { @class = "positive binary-answer right-answer", name = "yes" })
+                        @Html.SubmitButton("No", new { @class = "negative binary-answer wrong-answer", name = "no" })
+                    </div>
+                }
+            }
+            else if(Model.GameMode == GameMode.Multiple && !Model.IsChecked)
+            {
+                using (@Html.BeginForm("MultiAnswer", "Game", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="binary-submit possible-author">
+                        @foreach (var possibleAnswer in Model.PossibleAuthors)
+                        {
+                            <div class="multi-answer">
+                                <span class="glyphicon glyphicon-arrow-right"></span>@Html.SubmitButton(possibleAnswer, new {@class = "multi-answer", name = "answer", quoteId = @Model.QuoteId})
+                                @Html.HiddenFor(m => m.QuoteId)
+                            </div>
+                        }
+                    </div>
+                }
+            }
+            
+            @if (Model.AnswerType != AnswerType.NotAnswer)
+            {
+                if (Model.AnswerType == AnswerType.Correct)
+                {
+                    <div class="user-correct-answer binary-submit">Correct! The right answer is:</div>
+                }
+                else if (Model.AnswerType == AnswerType.Wrong)
+                {
+                    <div class="user-wrong-answer binary-submit">Sorry, you are wrong! The right answer is:</div>
+                }
+                <div class="right-answer-binary binary-submit">@Model.RightAnswer</div>
+            }
+            
+            @if (Model.IsChecked)
+            {
+                using (@Html.BeginForm("Game", "Game", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken();
+                    <div class="binary-submit">
+                        <input class="continue gray-effect" type="submit" name="continue" value="Continue" />
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+    
+    
+</div>
+
+@section scripts
+{
+    <script>
+
+        @*// onpage load
+        $(document).ready(function () {
+            $("#game-question").load('@Url.Action("Play", "Game", @Model)');
+        });*@
+
+
+
+        function callBinary(element) {
+
+            var idName = element.getAttribute('id');
+            console.log(idName);
+
+            if (idName === 'option-icon') {
+
+                $("#set-mode").load('@Url.Action("GameOption","GameOption", @Model)');
+                console.log('tyk sam');
+            }
+            else if (idName === 'play-icon') {
+
+                location.reload();
+            }
+
+            @*if (idName === '@Model.playIcon') {
+                $("#game-question").load('@Url.Action("BinaryPlay", "Game")');
+            }
+            else if (idName === '@Model.optionIcon') {
+                $("#game-question").load('@Url.Action("GameOption","GameOption")');
+            }*@
+        }
+    </script>
+}
+
+
