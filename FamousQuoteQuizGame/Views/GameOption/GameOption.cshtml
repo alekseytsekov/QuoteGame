@@ -10,7 +10,7 @@
     @using (@Html.BeginForm("SetOptions", "GameOption", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        ;
+        
         <div class="set-mode">
             <label>
                 @Html.RadioButtonFor(x => x.GameMode, GameMode.Binary, new { @class = "set-mode", @checked= "checked"})<span class="set-mode">Answer with Yes or No</span></label><br />

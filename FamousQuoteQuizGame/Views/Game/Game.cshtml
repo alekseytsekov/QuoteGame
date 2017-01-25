@@ -11,6 +11,11 @@
         <div id="play-icon" class="icon-container" onclick="callBinary(this)"><span class="glyphicon glyphicon-list"></span></div>
         <div id="option-icon" class="icon-container" onclick="callBinary(this)"><span class="glyphicon glyphicon-cog"></span></div>
         
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+        {
+            @Html.AntiForgeryToken()
+        }
+        
     </div>
     
     <div id="set-mode"></div>
@@ -99,30 +104,41 @@
             $("#game-question").load('@Url.Action("Play", "Game", @Model)');
         });*@
 
-
-
         function callBinary(element) {
 
             var idName = element.getAttribute('id');
-            console.log(idName);
+
 
             if (idName === 'option-icon') {
 
-                $("#set-mode").load('@Url.Action("GameOption","GameOption", @Model)');
-                console.log('tyk sam');
+                @*var form = $('#__AjaxAntiForgeryForm');
+                var token = $('input[name="__RequestVerificationToken"]', form).val();
+                @ViewBag = $('input[name="__RequestVerificationToken"]', form).val();*@
+                $("#set-mode").load('@Url.Action("GameOption","GameOption")');
+
+                //$("#set-mode").load(someFunc(form, token));
+
+                //$('#__AjaxAntiForgeryForm').submit();
             }
             else if (idName === 'play-icon') {
 
                 location.reload();
             }
-
-            @*if (idName === '@Model.playIcon') {
-                $("#game-question").load('@Url.Action("BinaryPlay", "Game")');
-            }
-            else if (idName === '@Model.optionIcon') {
-                $("#game-question").load('@Url.Action("GameOption","GameOption")');
-            }*@
         }
+
+        @*function someFunc(form, token) {
+
+            $.ajax({
+                url: $('@Url.Action("GameOption","GameOption")'),
+                type: 'POST',
+                data: {
+                    __RequestVerificationToken: token
+                },
+                success: function () {
+                    alert('Hi');
+                }
+            });
+        }*@
     </script>
 }
 

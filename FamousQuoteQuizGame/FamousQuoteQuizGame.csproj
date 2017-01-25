@@ -206,6 +206,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddQuoteController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GameOptionController.cs" />
     <Compile Include="Controllers\HighScoreController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -262,7 +263,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -287,9 +287,9 @@
     <Content Include="Views\Game\Game.cshtml" />
     <Content Include="Views\Shared\_LayoutInnerAutos.cshtml" />
     <Content Include="Views\GameOption\GameOption.cshtml" />
-    <Content Include="Views\Shared\_CorrectAnswer.cshtml" />
     <Content Include="Views\AddQuote\AddQuote.cshtml" />
     <Content Include="Views\HighScore\Standing.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

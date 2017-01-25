@@ -1,9 +1,23 @@
-﻿@model System.Web.Mvc.HandleErrorInfo
-
+﻿
 @{
     ViewBag.Title = "Error";
 }
+<div id="error-container">
+    <span class="neg">ERROR</span>
+    <p>
+        The page is missing or never was written. You can wait and<br />
+        see if it becomes available again, or you can restart your computer.
+    </p>
+    <p>
+        * Send us an e-mail to notify this and try it later.<br />
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+        * Press CTRL+ALT+DEL to restart your computer. You will<br />
+        &nbsp; lose unsaved information in any programs that are running.
+    </p>
+    Press any link to continue
+    <div class="menu">
+        @Html.ActionLink("Login", "Login", "Account")
+        @Html.ActionLink("Game", "Game", "Game")
+    </div>
+</div>
 

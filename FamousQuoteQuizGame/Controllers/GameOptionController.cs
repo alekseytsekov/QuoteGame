@@ -16,8 +16,14 @@
         }
 
         /* Game Option */
+        //[HttpPost]
         public ActionResult GameOption()
         {
+            if (!this.Request.IsAuthenticated)
+            {
+                return this.RedirectToAction("Login", "Account");
+            }
+
             return this.PartialView("GameOption");
         }
 

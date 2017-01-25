@@ -35,7 +35,8 @@
             catch (Exception ex)
             {
                 //log ex message
-                throw new ArgumentException(GlobalMessage.InvalidUserId);
+                //throw new ArgumentException(GlobalMessage.InvalidUserId);
+                
             }
         }
 
