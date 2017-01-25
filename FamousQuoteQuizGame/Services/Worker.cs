@@ -5,9 +5,10 @@
     using System.Linq;
     using FamousQuoteQuizGame.Data.Common;
     using FamousQuoteQuizGame.Data.Models;
-    using FamousQuoteQuizGame.Enums;
+    using FamousQuoteQuizGame.Data.Models.Enums;
     using FamousQuoteQuizGame.Globals;
     using FamousQuoteQuizGame.Models;
+    using FamousQuoteQuizGame.Models.Enums;
 
     public class Worker : IWorker
     {
@@ -35,7 +36,7 @@
             catch (Exception ex)
             {
                 //log ex message
-                //throw new ArgumentException(GlobalMessage.InvalidUserId);
+                throw new ArgumentException(GlobalMessage.InvalidUserId);
                 
             }
         }

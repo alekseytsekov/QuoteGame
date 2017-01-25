@@ -2,8 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
-    using FamousQuoteQuizGame.Enums;
+    using FamousQuoteQuizGame.Data.Models.Enums;
     using FamousQuoteQuizGame.Models;
+    using FamousQuoteQuizGame.Models.Enums;
 
     public interface IWorker
     {

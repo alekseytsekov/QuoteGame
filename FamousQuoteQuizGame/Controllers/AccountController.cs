@@ -9,6 +9,7 @@
     using Microsoft.Owin.Security;
     using FamousQuoteQuizGame.Models;
     using FamousQuoteQuizGame.Data.Models;
+    using FamousQuoteQuizGame.Models.AccountViewModels;
     using FamousQuoteQuizGame.Services;
 
     [Authorize]

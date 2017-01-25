@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel;
-    using FamousQuoteQuizGame.Enums;
+    using FamousQuoteQuizGame.Data.Models.Enums;
 
     public class UserGameInfo : BaseModel
     {

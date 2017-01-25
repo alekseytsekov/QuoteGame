@@ -1,7 +1,8 @@
 ﻿namespace FamousQuoteQuizGame.Models
 {
     using System.Collections.Generic;
-    using FamousQuoteQuizGame.Enums;
+    using FamousQuoteQuizGame.Data.Models.Enums;
+    using FamousQuoteQuizGame.Models.Enums;
 
     public class ClientViewModel
     {

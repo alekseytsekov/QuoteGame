@@ -1,4 +1,4 @@
-﻿namespace FamousQuoteQuizGame.Enums
+﻿namespace FamousQuoteQuizGame.Models.Enums
 {
     public enum AnswerType
     {

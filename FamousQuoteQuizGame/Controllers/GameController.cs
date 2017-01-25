@@ -2,9 +2,9 @@
 {
     using System;
     using System.Web.Mvc;
-    using FamousQuoteQuizGame.Enums;
     using FamousQuoteQuizGame.Globals;
     using FamousQuoteQuizGame.Models;
+    using FamousQuoteQuizGame.Models.Enums;
     using FamousQuoteQuizGame.Services;
     using Microsoft.AspNet.Identity;
 

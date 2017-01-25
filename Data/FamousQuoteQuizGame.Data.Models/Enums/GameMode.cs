@@ -1,4 +1,4 @@
-﻿namespace FamousQuoteQuizGame.Enums
+﻿namespace FamousQuoteQuizGame.Data.Models.Enums
 {
     public enum GameMode
     {
