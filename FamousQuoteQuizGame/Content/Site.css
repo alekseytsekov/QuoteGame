@@ -251,7 +251,7 @@ div.add-quote {
 
 /*************** ERROR ***********/
 
-#error-container {
+#error-container, .error-container {
     background:#0000aa;
     color:#ffffff;
     font-family:courier;

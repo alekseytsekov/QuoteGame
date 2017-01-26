@@ -213,6 +213,20 @@
             return scoreModels;
         }
 
+        public bool CanAddQuote(string userId)
+        {
+            System.Threading.Thread.CurrentThread.CurrentCulture =
+                new System.Globalization.CultureInfo("en-US");
+
+            var currentDate = DateTime.UtcNow.Date;
+
+            var canAdd = this.context.Quotes
+                .GetAll()
+                .Count(x => x.UserGameInfo.UserId == userId && x.CreatedOn >= currentDate) < WorkerSettings.MaxAddedQuotesPerDay;
+
+            return  canAdd;
+        }
+
         private IList<string> Shuffle(IList<string> collection)
         {
             if (collection.Count <= 1)
@@ -265,5 +279,7 @@
 
             return quotes;
         }
+
+
     }
 }

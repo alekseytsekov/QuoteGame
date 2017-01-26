@@ -33,6 +33,18 @@
 
             var quote = model.TextArea;
             var author = model.TextBox;
+
+            bool canAddQuote = this.worker.CanAddQuote(userId);
+
+            if (!canAddQuote)
+            {
+                var errorModel = new ErrorViewModel()
+                {
+                    Reason = GlobalMessage.TooManyQuotes,
+                    Advice = GlobalMessage.TryAgain
+                };
+                return this.PartialView("_ErrorPage", errorModel);
+            }
             
             bool isSuccess = this.worker.AddNewQuote(quote, author, userId);
 

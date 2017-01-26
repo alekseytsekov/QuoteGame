@@ -21,5 +21,7 @@
         void ChangeGameMode(string userId, GameMode gameMode);
 
         IEnumerable<HighScoreViewModel> GetBestPlayers();
+
+        bool CanAddQuote(string userId);
     }
 }
