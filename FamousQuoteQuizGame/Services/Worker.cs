@@ -189,19 +189,19 @@
                 .Take(WorkerSettings.MaxStandingList)
                 .Select(x =>
                 new {
-                    UserName = x.User.UserName.Substring(0, x.User.UserName.IndexOf("@")),
+                    UserName = x.User.UserName,
                     CorrectAnswers = x.CorrectAnswer,
                     Attempts = x.AttemptsGuess
                 })
                 .ToArray();
-
+            //.Substring(0, x.User.UserName.IndexOf("@"))
             var scoreModels = new List<HighScoreViewModel>();
 
             foreach (var stat in stats)
             {
                 var model = new HighScoreViewModel();
 
-                model.User = stat.UserName;
+                model.User = stat.UserName.Contains("@") ? (stat.UserName.Substring(0, stat.UserName.IndexOf("@"))) : stat.UserName;
                 model.CorrectAnswer = stat.CorrectAnswers.Value == null ? 0 : stat.CorrectAnswers.Value;
                 model.AttemptsGuess = stat.Attempts;
 
