@@ -189,7 +189,7 @@
                 .Take(WorkerSettings.MaxStandingList)
                 .Select(x =>
                 new {
-                    UserName = x.User.UserName,
+                    UserName = x.User.UserName.Substring(0, x.User.UserName.IndexOf("@")),
                     CorrectAnswers = x.CorrectAnswer,
                     Attempts = x.AttemptsGuess
                 })
