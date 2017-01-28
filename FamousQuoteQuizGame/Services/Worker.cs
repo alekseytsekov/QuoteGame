@@ -202,9 +202,8 @@
                 var model = new HighScoreViewModel();
 
                 model.User = stat.UserName.Contains("@") ? (stat.UserName.Substring(0, stat.UserName.IndexOf("@"))) : stat.UserName;
-                model.CorrectAnswer = stat.CorrectAnswers.Value == null ? 0 : stat.CorrectAnswers.Value;
+                model.CorrectAnswer = stat.CorrectAnswers == null ? 0 : stat.CorrectAnswers.Value;
                 model.AttemptsGuess = stat.Attempts;
-
                 scoreModels.Add(model);
             }
 

@@ -23,6 +23,18 @@ textarea {
     max-width: 280px;
 }
 
+/*#registerLink, #loginLink {
+    color: red !important;
+}*/
+
+#logoutForm > ul > li > a {
+    color: dimgray;
+}
+
+#logoutForm > ul > li > a:hover{
+    color: white;
+}
+
 .navbar {
     background-color: hsl(240, 100%, 80%);
 }
