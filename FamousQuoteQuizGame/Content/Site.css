@@ -1,20 +1,20 @@
-﻿body {
+﻿/*/*body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+/*.dl-horizontal dt {
     white-space: normal;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -24,11 +24,11 @@ textarea {
 }
 
 /*#registerLink, #loginLink {
-    color: red !important;
+    color: dimgray !important;
 }*/
 
-#logoutForm > ul > li > a {
-    color: dimgray;
+/*#logoutForm > ul > li > a, .navbar-collapse > .navbar-nav > li > a {
+    color: black;
 }
 
 #logoutForm > ul > li > a:hover{
@@ -46,7 +46,77 @@ textarea {
 
 #overrideCss.navbar-brand:hover {
     color: white;
+}*/
+
+/*********** HEAD-NAV ***********/
+body, div, p, a, header, li, ul, ol{
+    margin: 0;
+    padding: 0;
 }
+
+#main-nav {
+    padding: 25px 15%;
+    background-color: blue;
+    font-size: 3rem;
+    clear: both;
+    overflow: auto;
+    
+}
+
+a{
+    text-decoration: none !important;
+    color: white;
+    padding: 5px 10px;
+}
+
+a:hover{
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+#main-nav > div, #main-nav ul > li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#main-menu{
+    float: left;
+}
+
+#login-menu{
+    float: right;
+}
+
+/**** media main nav ******/
+@media screen and (max-width: 850px) {
+
+    #main-nav > div {
+        display: block;
+        float: none;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    #main-nav ul > li {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    a{
+        overflow: auto;
+        word-wrap:break-word;
+    }
+}
+
 
 /*********** global *************/
 
@@ -66,6 +136,12 @@ textarea {
     cursor: pointer;
 }
 /************************/
+
+
+.container {
+    overflow: auto;
+}
+
 .game-container {
     width: 500px;
     margin: 0 auto;
