@@ -21,7 +21,7 @@
         {
             if (!this.Request.IsAuthenticated)
             {
-                return this.RedirectToAction("Login", "Account");
+                return this.RedirectToAction("Index", "Home");
             }
 
             return this.PartialView("GameOption");

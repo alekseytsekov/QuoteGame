@@ -209,6 +209,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GameOptionController.cs" />
     <Compile Include="Controllers\HighScoreController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="CustomHelpers\CustomHtmlHelper.cs" />
@@ -292,6 +293,7 @@
     <Content Include="Views\HighScore\Standing.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_ErrorPage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

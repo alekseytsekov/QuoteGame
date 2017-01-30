@@ -166,7 +166,7 @@
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return this.RedirectToAction("Game", "Game");
+                    return this.RedirectToAction("Index", "Home");
                 }
                 this.AddErrors(result);
             }
@@ -395,7 +395,7 @@
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Login", "Account");
+            return this.RedirectToAction("Login", "Account");
         }
 
         //
