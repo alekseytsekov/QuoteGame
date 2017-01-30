@@ -14,10 +14,11 @@
             @Html.Partial("_LoginPartial")
         </div>
         <div id="main-menu">
-            <ul>
-                <li>@Html.ActionLink("Play", "Game", "Game", new {area = ""}, new {})</li>
-                <li>@Html.ActionLink("High Score", "Standing", "HighScore", new { area = "" }, new { })</li>
-                <li>@Html.ActionLink("Add Quote", "AddQuote", "AddQuote", new { area = "" }, new { })</li>
+            <ul class="nav-list">
+                <li class="nav-link">@Html.ActionLink("Play", "Game", "Game", new {area = ""}, new {})</li>
+                <li class="nav-link">@Html.ActionLink("High Score", "Standing", "HighScore", new { area = "" }, new { })</li>
+                <li class="nav-link">@Html.ActionLink("Add Quote", "AddQuote", "AddQuote", new { area = "" }, new { })</li>
+                <li class="my-icon"><a href="#">&#9776;</a></li>
             </ul>
         </div>
     </header>
